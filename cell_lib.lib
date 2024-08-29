@@ -1,0 +1,68 @@
+library(simple_lib) {
+    cell(carry_save_adder) {
+        area : 10;
+        pin(a) {
+            direction : input;
+        }
+        pin(b) {
+            direction : input;
+        }
+        pin(c) {
+            direction : input;
+        }
+        pin(sum) {
+            direction : output;
+            function : "(a ^ b ^ c)";
+        }
+        pin(carry_out) {
+            direction : output;
+            function : "(a & b) | (b & c) | (c & a)";
+        }
+    }
+    cell(carry_increment_adder_rca) {
+        area : 12;
+        pin(a) {
+            direction : input;
+        }
+        pin(b) {
+            direction : input;
+        }
+        pin(sum) {
+            direction : output;
+        }
+        pin(carry_out) {
+            direction : output;
+        }
+    }
+    cell(carry_increment_adder_cla) {
+        area : 14;
+        pin(a) {
+            direction : input;
+        }
+        pin(b) {
+            direction : input;
+        }
+        pin(sum) {
+            direction : output;
+        }
+        pin(carry_out) {
+            direction : output;
+        }
+    }
+    cell(carry_lookahead_adder) {
+        area : 16;
+        pin(a) {
+            direction : input;
+        }
+        pin(b) {
+            direction : input;
+        }
+        pin(sum) {
+            direction : output;
+        }
+        pin(carry_out) {
+            direction : output;
+        }
+    }
+}
+
